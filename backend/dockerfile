@@ -1,0 +1,25 @@
+# install some OS level dependencies
+FROM pfeiffermax/uvicorn-poetry:3.2.0-python3.12.0-slim-bookworm as base-image-with-utils
+USER root
+RUN apt-get update
+RUN apt-get install -y gcc libpq-dev
+USER 1001
+
+FROM base-image-with-utils as dependencies-build-stage
+
+# install [tool.poetry.dependencies]
+# this will install virtual environment into /.venv because of POETRY_VIRTUALENVS_IN_PROJECT=true
+# see: https://python-poetry.org/docs/configuration/#virtualenvsin-project
+COPY --chown=python_application:python_application ./poetry.lock ./pyproject.toml /application_root/
+RUN poetry install --no-interaction --no-root
+
+
+FROM base-image-with-utils as production-image
+# Copy virtual environment
+COPY --chown=python_application:python_application --from=dependencies-build-stage /application_root/.venv /application_root/.venv
+# Copy application files
+COPY --chown=python_application:python_application /app /application_root/app/
+COPY --chown=python_application:python_application ./pyproject.toml /application_root/
+
+EXPOSE 8000
+CMD poetry run uvicorn --host localhost app.main:app --reload

@@ -7,6 +7,7 @@ A logged-in user (no login system is provided for this example) may send a messa
 Chat messages are persisted across page loads/visits and client/server/database restarts.
 
 ## Postgres Data Model
+<img width="692" alt="image" src="https://github.com/user-attachments/assets/c8f7da1b-3184-46f6-8411-354e11caea54">
 
 ### Tables
 

@@ -1,8 +1,8 @@
 
-export interface Props {
-  isCurrentUser: boolean,
+export interface ChatMessageProps {
   sender: string,
   text: string,
 }
-export const chatmessage = ({sender, text}: Props) => ( <p>{sender}: {text}</p> )
+
+export const ChatMessage = ({sender, text}: ChatMessageProps) => ( <p>{sender}: {text}</p> )
 

@@ -65,7 +65,6 @@ async def create_thread_message(user_chat: UserChatRequest):
 
     return chat
 
-
 class BotMessageRequest(BaseModel):
     message: str
     thread_id: int

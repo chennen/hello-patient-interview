@@ -16,6 +16,7 @@ from datetime import datetime
 class Base(DeclarativeBase):
     pass
 
+# ASSUMPTION: only one user in a thread for now
 # user_thread = Table(
 #     "user_thread",
 #     Base.metadata,
@@ -47,6 +48,9 @@ class Thread(Base):
         return f"Thread(id={self.id!r})"
 
 
+# ASSUMPTION: only one bot (user_id = NULL).
+# could add "type" column to users and make bot accounts there
+# could make a bot table and then have a FK on chats table - trigger to make sure one of user_id or bot_id is populated in each row though
 class Chat(Base):
     __tablename__ = "chat"
 

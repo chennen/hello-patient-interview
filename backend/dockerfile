@@ -22,4 +22,4 @@ COPY --chown=python_application:python_application /app /application_root/app/
 COPY --chown=python_application:python_application ./pyproject.toml /application_root/
 
 EXPOSE 8000
-CMD poetry run uvicorn --host localhost app.main:app --reload
+CMD poetry run uvicorn --host 0.0.0.0 app.main:app --reload

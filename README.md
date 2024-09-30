@@ -24,48 +24,49 @@ Chat messages are persisted across page loads/visits and client/server/database 
 1. `GET /users/me` - get the "Alice" user.
 1. `GET /users/me/threads/default` - get "Alice"s thread.
 1. `GET /threads/default/chats` - get the chat messages for the thread.
-1. `POST /threads/default/chats` - save a user's input chat message to the thread.
-   Example request body:
+1. `POST /threads/default/chats` - save a user's input chat message to the thread. 
+    Example request body:  
 
-```json
-{
-  "user_id": "1",
-  "thread_id": "1",
-  "message": "hello world"
-}
-```
+   ```json
+   {
+   "user_id": "1",
+   "thread_id": "1",
+   "message": "hello world"
+   }
+   ```
 
-Example cURL:
+   Example cURL:
 
-```
-curl -X POST "http://localhost:8000/threads/default/chats" \
-     -H "Content-Type: application/json" \
-     -d '{ "message": "hello world", "thread_id": "1", "user_id": "1" }'
-```
+   ```
+   curl -X POST "http://localhost:8000/threads/default/chats" \
+      -H "Content-Type: application/json" \
+      -d '{ "message": "hello world", "thread_id": "1", "user_id": "1" }'
+   ```
 
 1. `POST /threads/default/bot-chat` - generate a chat bot response to the provided chat message, and save the bot chat message to the thread.
    Example request body:
 
-```json
-{
-  "thread_id": "1",
-  "message": "i want to know more about zebras"
-}
-```
+   ```json
+   {
+   "thread_id": "1",
+   "message": "i want to know more about zebras"
+   }
+   ```
 
-Example cURL:
+   Example cURL:
 
-```
-curl -X POST "http://localhost:8000/threads/default/bot-chat" \
-     -H "Content-Type: application/json" \
-     -d '{ "message": "hello world", "thread_id": "1" }'
-```
+   ```
+   curl -X POST "http://localhost:8000/threads/default/bot-chat" \
+      -H "Content-Type: application/json" \
+      -d '{ "message": "hello world", "thread_id": "1" }'
+   ```
 
 ## NextJS Frontend
 
 ???
 
 ## Running the Application
+The application is containerized and runs with docker and docker-compose.
 
 ### Required Software
 

@@ -4,13 +4,11 @@ services:
     ports:
       - "3000:3000"
     volumes:
-      - ./frontend/app:/app/app
+      - ./frontend:/app
+      - /app/node_modules
     depends_on:
       database:
         condition: service_healthy
-    # Add healthcheck to backend before using this
-    # backend:
-    #   condition: service_healthy
   backend:
     build: ./backend
     volumes:

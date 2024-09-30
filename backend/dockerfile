@@ -10,7 +10,7 @@ FROM base-image-with-utils as dependencies-build-stage
 # install [tool.poetry.dependencies]
 # this will install virtual environment into /.venv because of POETRY_VIRTUALENVS_IN_PROJECT=true
 # see: https://python-poetry.org/docs/configuration/#virtualenvsin-project
-COPY --chown=python_application:python_application ./poetry.lock ./pyproject.toml /application_root/
+COPY --chown=python_application:python_application ./pyproject.toml /application_root/
 RUN poetry install --no-interaction --no-root
 
 

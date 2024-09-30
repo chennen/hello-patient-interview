@@ -25,6 +25,8 @@ Chat messages are persisted across page loads/visits and client/server/database 
 1. `GET /users/me/threads/default` - get "Alice"s thread.
 1. `GET /threads/default/chats` - get the chat messages for the thread.
 1. `POST /threads/default/chats` - save a user's input chat message to the thread. 
+
+
     Example request body:  
 
    ```json
@@ -44,6 +46,8 @@ Chat messages are persisted across page loads/visits and client/server/database 
    ```
 
 1. `POST /threads/default/bot-chat` - generate a chat bot response to the provided chat message, and save the bot chat message to the thread.
+
+
    Example request body:
 
    ```json

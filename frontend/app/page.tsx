@@ -1,6 +1,10 @@
 import { User, ChatThread, Chat, ChatbotUser } from "../models";
 import ChatUI from "../components/ChatUI";
 
+// hint to NextJS that this page is not static - need to fetch data on each refresh
+export const revalidate = 0
+
+
 const apiUrl = process.env.NEXT_PUBLIC_API_URL;
 
 export default async function Home() {

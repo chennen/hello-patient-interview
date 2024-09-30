@@ -67,9 +67,11 @@ Chat messages are persisted across page loads/visits and client/server/database 
 
 ## NextJS Frontend
 
-<img width="607" alt="image" src="https://github.com/user-attachments/assets/57903143-802f-409d-9db5-fad8b1144a8c">
+<img width="504" alt="image" src="https://github.com/user-attachments/assets/7d0f5980-715f-4af0-8ba0-9fab10c5b603">
 
-The UI is very simplistic - type a message to the bot and press the "Send Message" button. The bot may take a while to respond since it is a very advanced AI model! 😛
+The UI is very simplistic - type a message to the bot and press the "Send Message" button. Messages sent to the bot will remain here so you can pick up your conversation later.
+
+Note that the bot may take a while to respond since it is a very advanced AI model! 😛
 
 ## Running the Application
 The application is containerized and runs with docker and docker-compose.

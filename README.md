@@ -15,7 +15,7 @@ Chat messages are persisted across page loads/visits and client/server/database 
    There is only one user called "Alice" for now.
 1. Thread - a grouping for chat messages from users and bots. Could be extended to support different threads for a user, or for multiple users to chat in a single thread.
    There is only one thread (whose `id` is 1) for now.
-1. Chat - represents a single message in a thread. If the message came from a bot, the `user_id` column is `NULL`.1. Chat - represents a single message in a thread. If the message came from a bot, the `user_id` column is `NULL`.
+1. Chat - represents a single message in a thread. If the message came from a bot, the `user_id` column is `NULL`. 
 
 ## FastAPI Backend
 
